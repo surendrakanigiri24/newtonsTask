@@ -1,0 +1,206 @@
+{
+	"info": {
+		"_postman_id": "54ae3237-4676-4859-96e6-f7ad301ee1a9",
+		"name": "APIS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Sample API test",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": "{{commonEndPoint}}"
+			},
+			"response": []
+		},
+		{
+			"name": "movie ticket booking",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"customerName\" : \"Surendra Kanigiri\",\n    \"movieTitle\" : \"Veerupaksha\",\n    \"movieTime\" : \"2023-04-27 12:30:00\",\n    \"ticketPrice\" : 120\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{commonEndPoint}}createBooking"
+			},
+			"response": []
+		},
+		{
+			"name": "To get booking details by id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{commonEndPoint}}getBookingById?id=6",
+					"host": [
+						"{{commonEndPoint}}getBookingById"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "6"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update booking details",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\" : 5,\n    \"customerName\" : \"Surendra\",\n    \"movieTitle\" : \"Veerupaksha\",\n    \"movieTime\" : \"2023-03-26 12:30:00\",\n    \"ticketPrice\" : 120\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{commonEndPoint}}updateBookingDetails"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Booking",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{commonEndPoint}}deleteBookingDetails?id=11",
+					"host": [
+						"{{commonEndPoint}}deleteBookingDetails"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "11"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Profit of movies",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{commonEndPoint}}profit?fromDate=2023-02-01&toDate=2023-04-30\"&method=db-aggregation",
+					"host": [
+						"{{commonEndPoint}}profit"
+					],
+					"query": [
+						{
+							"key": "fromDate",
+							"value": "2023-02-01"
+						},
+						{
+							"key": "toDate",
+							"value": "2023-04-30\""
+						},
+						{
+							"key": "method",
+							"value": "db-aggregation"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Analytics of visited",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{commonEndPoint}}visited?fromDate=\"2023-02-01\"&toDate=\"2023-04-30\"&method=db-aggregation",
+					"host": [
+						"{{commonEndPoint}}visited"
+					],
+					"query": [
+						{
+							"key": "fromDate",
+							"value": "\"2023-02-01\""
+						},
+						{
+							"key": "toDate",
+							"value": "\"2023-04-30\""
+						},
+						{
+							"key": "method",
+							"value": "db-aggregation"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

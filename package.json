@@ -1,0 +1,29 @@
+{
+  "name": "movie-ticket-portal",
+  "version": "1.0.0",
+  "description": "It's deals with movie tickets booking and analytics",
+  "main": "index.js",
+  "engine": {
+    "node": "16.x"
+  },
+  "scripts": {
+    "start": " nodemon src/index.js",
+    "lint": "eslint src/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Surendra Kanigiri",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-async-handler": "^1.2.0",
+    "joi": "^17.9.2",
+    "nodemon": "^2.0.22",
+    "pg": "^8.10.0",
+    "sequelize": "^6.31.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.39.0"
+  }
+}

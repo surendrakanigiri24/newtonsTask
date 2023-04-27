@@ -12,6 +12,9 @@ PORT = 3005
 #SECRET KEY
 SECRET_KEY = ********
 
+#API AUTHORIZATION TOKEN
+$2b$08$.suZVYBFsNE4tBw1HMAgo.i7yIGeVziW7a7uthFhkK5kzHhgU4npm
+
 # DB Settings
 DB_HOST=localhost
 DB_PORT=5432
